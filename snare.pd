@@ -14,19 +14,19 @@
 #X obj 381 277 del 1;
 #X msg 381 308 0 10;
 #X obj 553 166 hsl 128 15 0.1 0.7 0 0 empty empty Decay 5 5 0 10 -1
--262144 -262144 12400 1;
-#X obj 553 147 hsl 128 15 0.5 5 0 0 empty empty Level 5 5 0 10 -1 -262144
--262144 8656 1;
-#X obj 416 147 hsl 128 15 300 12000 0 0 empty empty Tone 5 5 0 10 -1
--262144 -262144 1245 1;
+-262144 -262144 9500 1;
+#X obj 553 147 hsl 128 15 0.5 8 0 0 empty empty Level 5 5 0 10 -1 -262144
+-262144 12700 1;
+#X obj 416 147 hsl 128 15 300 12000 1 0 empty empty Tone 5 5 0 10 -1
+-262144 -262144 300 1;
 #X obj 416 166 hsl 128 15 30 2 0 0 empty empty Spread 5 5 0 10 -1 -262144
--262144 12200 1;
+-262144 12050 1;
 #X obj 412 42 loadbang;
 #X msg 415 93 2000;
 #X msg 476 93 8;
 #X msg 520 92 3;
 #X obj 422 277 delread~ delay1 15;
-#X msg 588 83 0.4;
+#X msg 577 87 0.4;
 #X obj 221 257 scale 0 1 0.8 1 0;
 #X obj 291 500 *;
 #X obj 555 244 *;
@@ -53,6 +53,7 @@
 #X connect 18 0 19 0;
 #X connect 18 0 20 0;
 #X connect 18 0 21 0;
+#X connect 18 0 23 0;
 #X connect 19 0 16 0;
 #X connect 20 0 17 0;
 #X connect 21 0 15 0;
