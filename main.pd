@@ -1,14 +1,14 @@
 #N canvas 195 144 1183 754 10;
-#X obj 339 152 cnv 15 642 397 empty empty Sequencer 10 10 0 14 -24967
--262144 0;
+#X obj 339 152 cnv 15 642 397 empty empty empty 10 10 0 14 -24967 -262144
+0;
 #X obj 311 152 tgl 28 0 play empty empty 0 -15 0 10 -66577 -262144
--1 1 1;
+-1 0 1;
 #X obj 52 691 output~;
-#X obj 350 185 sequencer;
-#X obj 350 283 sequencer;
-#X obj 350 249 hihat;
-#X obj 52 610 catch~ output;
-#X obj 349 395 sequencer;
+#X obj 347 161 sequencer;
+#X obj 347 259 sequencer;
+#X obj 347 225 hihat;
+#X obj 52 623 catch~ output;
+#X obj 346 371 sequencer;
 #N canvas 329 87 767 758 kick 0;
 #X obj 34 12 inlet;
 #X obj 168 309 osc~;
@@ -23,9 +23,9 @@
 #X obj 78 222 del 10;
 #X obj 34 46 t b b i b;
 #X obj 180 121 hsl 128 15 50 120 0 0 empty empty Tone 5 5 0 10 -1 -262144
--262144 5743 1;
+-262144 5443 1;
 #X obj 180 141 hsl 128 15 50 500 0 0 empty empty Decay 5 5 0 10 -1
--262144 -262144 2222 1;
+-262144 -262144 2822 1;
 #X msg 168 254 \$1 0;
 #X obj 220 206 / 2;
 #X obj 220 250 pack f f;
@@ -62,12 +62,12 @@
 #X connect 20 0 13 0;
 #X connect 21 0 7 0;
 #X coords 0 -1 1 1 133 35 2 180 121;
-#X restore 349 454 pd kick;
+#X restore 346 430 pd kick;
 #X obj 311 90 key;
-#X obj 350 341 snare;
+#X obj 347 317 snare;
 #X obj 212 418 record;
-#X obj 52 650 clip~ -1 1;
-#X obj 146 650 clip~ -1 1;
+#X obj 52 659 clip~ -1 1;
+#X obj 123 659 clip~ -1 1;
 #X obj 311 115 route 32;
 #N canvas 1081 439 450 323 sample 0;
 #X obj 53 84 inlet;
@@ -106,9 +106,9 @@
 0;
 #X floatatom 162 103 4 50 200 1 - - -, f 4;
 #X obj 112 -28 vsl 30 120 0 0.5 0 0 empty empty Swing 0 -9 0 10 -66577
--262144 -262144 3000 1;
+-262144 -262144 2300 1;
 #X obj 160 -27 vsl 30 120 40 200 0 0 tempo empty Tempo 0 -9 0 10 -66577
--262144 -262144 5132 1;
+-262144 -262144 5950 1;
 #X obj 112 -120 loadbang;
 #X obj 112 -94 t 0 120;
 #X obj 285 13 expr (60 / $f1) * (4000 / 15);
