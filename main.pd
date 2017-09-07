@@ -1,5 +1,5 @@
-#N canvas 195 144 1183 754 10;
-#X obj 339 152 cnv 15 642 397 empty empty empty 10 10 0 14 -24967 -262144
+#N canvas 159 142 1183 754 10;
+#X obj 339 152 cnv 15 639 473 empty empty empty 10 10 0 14 -24967 -262144
 0;
 #X obj 311 152 tgl 28 0 play empty empty 0 -15 0 10 -66577 -262144
 -1 0 1;
@@ -9,7 +9,7 @@
 #X obj 347 225 hihat;
 #X obj 52 623 catch~ output;
 #X obj 346 371 sequencer;
-#N canvas 329 87 767 758 kick 0;
+#N canvas 453 192 767 781 kick 0;
 #X obj 34 12 inlet;
 #X obj 168 309 osc~;
 #X obj 168 285 vline~;
@@ -23,9 +23,9 @@
 #X obj 78 222 del 10;
 #X obj 34 46 t b b i b;
 #X obj 180 121 hsl 128 15 50 120 0 0 empty empty Tone 5 5 0 10 -1 -262144
--262144 5443 1;
+-262144 5143 1;
 #X obj 180 141 hsl 128 15 50 500 0 0 empty empty Decay 5 5 0 10 -1
--262144 -262144 2822 1;
+-262144 -262144 2422 1;
 #X msg 168 254 \$1 0;
 #X obj 220 206 / 2;
 #X obj 220 250 pack f f;
@@ -69,46 +69,43 @@
 #X obj 52 659 clip~ -1 1;
 #X obj 123 659 clip~ -1 1;
 #X obj 311 115 route 32;
-#N canvas 1081 439 450 323 sample 0;
-#X obj 53 84 inlet;
-#X obj 142 48 openpanel;
-#X obj 142 28 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 142 92 soundfiler;
-#N canvas 0 22 450 300 (subpatch) 0;
-#X array sample 11448 float 4 black black;
-#X coords 0 1 11447 -1 200 140 1;
-#X restore 315 35 graph;
-#X obj 126 335 throw~ output;
-#X obj 126 305 tabread4~ sample;
-#X obj 127 152 expr 44100 / $f1;
-#X obj 127 187 float;
-#X obj 86 192 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X floatatom 127 219 5 0 0 0 - - -, f 5;
-#X obj 127 248 phasor~;
-#X obj 127 275 *~;
-#X msg 142 70 read -resize \$1 sample;
-#X connect 1 0 13 0;
+#N canvas 477 295 850 569 sample 0;
+#X obj 15 28 inlet;
+#X obj 154 123 openpanel;
+#X obj 154 42 bng 30 100 50 0 empty empty Load\ sample 35 13 0 12 -1
+-262144 -262144;
+#X obj 154 167 soundfiler;
+#X obj 15 148 throw~ output;
+#X obj 14 174 table sampler;
+#X msg 154 145 read -resize \$1 sampler;
+#X obj 30 63 tabplay~ sampler;
+#X obj 15 90 *~;
+#X obj 154 78 hsl 128 15 0 1 0 0 empty empty Level 5 5 0 10 -1 -262144
+-262144 3850 1;
+#X obj 15 120 *~;
+#X obj 302 29 loadbang;
+#X msg 302 54 1;
+#X connect 0 0 7 0;
+#X connect 0 0 8 0;
+#X connect 1 0 6 0;
 #X connect 2 0 1 0;
-#X connect 3 0 7 0;
-#X connect 3 0 12 1;
+#X connect 6 0 3 0;
 #X connect 7 0 8 1;
 #X connect 8 0 10 0;
-#X connect 9 0 8 0;
-#X connect 10 0 11 0;
+#X connect 9 0 10 1;
+#X connect 10 0 4 0;
 #X connect 11 0 12 0;
-#X connect 12 0 6 0;
-#X connect 13 0 3 0;
-#X restore 68 110 pd sample;
+#X connect 12 0 9 0;
+#X coords 0 -1 1 1 143 63 2 149 35;
+#X restore 348 548 pd sample;
 #N canvas 515 322 901 557 control 0;
 #X obj 100 -62 cnv 15 103 185 empty empty Timing 5 5 0 12 -1 -262144
 0;
 #X floatatom 162 103 4 50 200 1 - - -, f 4;
 #X obj 112 -28 vsl 30 120 0 0.5 0 0 empty empty Swing 0 -9 0 10 -66577
--262144 -262144 2300 1;
+-262144 -262144 3200 1;
 #X obj 160 -27 vsl 30 120 40 200 0 0 tempo empty Tempo 0 -9 0 10 -66577
--262144 -262144 5950 1;
+-262144 -262144 6247 1;
 #X obj 112 -120 loadbang;
 #X obj 112 -94 t 0 120;
 #X obj 285 13 expr (60 / $f1) * (4000 / 15);
@@ -170,6 +167,7 @@
 #X connect 28 0 26 0;
 #X coords 0 -1 1 1 107 189 2 98 -64;
 #X restore 230 208 pd control;
+#X obj 348 484 sequencer;
 #X connect 3 0 5 0;
 #X connect 4 0 10 0;
 #X connect 6 0 12 0;
@@ -179,3 +177,4 @@
 #X connect 12 0 2 0;
 #X connect 13 0 2 1;
 #X connect 14 0 1 0;
+#X connect 17 0 15 0;
