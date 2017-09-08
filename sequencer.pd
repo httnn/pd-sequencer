@@ -1,4 +1,4 @@
-#N canvas 228 82 1062 763 10;
+#N canvas 18 23 1062 763 10;
 #X obj 41 62 cnv 15 854 607 empty empty empty 20 12 0 14 -153958 -66577
 0;
 #X obj 116 378 step;
@@ -40,13 +40,16 @@
 #X msg 214 202 deselectall;
 #X obj 421 176 spigot;
 #X obj 421 150 receive enable-step;
-#X msg 421 202 select \$1;
 #X obj 479 405 bng 23 250 50 0 empty empty None 25 8 0 12 -1 -262144
 -262144;
 #X obj 548 380 bng 23 250 50 0 empty empty Increment 25 8 0 12 -1 -262144
 -262144;
 #X obj 548 405 bng 23 250 50 0 empty empty Decrement 25 8 0 12 -1 -262144
 -262144;
+#X msg 422 202 select \$1 \$2;
+#X obj 651 405 bng 23 250 50 0 empty empty Randomize 25 8 0 12 -1 -262144
+-262144;
+#X msg 508 202 randomize;
 #X connect 1 0 25 0;
 #X connect 1 1 2 0;
 #X connect 2 0 25 0;
@@ -90,6 +93,7 @@
 #X connect 27 0 28 0;
 #X connect 28 0 1 0;
 #X connect 29 0 34 0;
+#X connect 30 0 22 1;
 #X connect 30 0 13 1;
 #X connect 30 0 11 1;
 #X connect 30 0 15 1;
@@ -97,7 +101,6 @@
 #X connect 30 0 3 1;
 #X connect 30 0 24 1;
 #X connect 30 0 23 1;
-#X connect 30 0 22 1;
 #X connect 30 0 21 1;
 #X connect 30 0 20 1;
 #X connect 30 0 19 1;
@@ -119,10 +122,12 @@
 #X connect 33 0 36 1;
 #X connect 34 0 30 0;
 #X connect 35 0 30 0;
-#X connect 36 0 38 0;
+#X connect 36 0 41 0;
 #X connect 37 0 36 0;
-#X connect 38 0 30 0;
-#X connect 39 0 35 0;
-#X connect 40 0 32 0;
-#X connect 41 0 31 0;
-#X coords 0 -1 1 1 608 53 2 116 378;
+#X connect 38 0 35 0;
+#X connect 39 0 32 0;
+#X connect 40 0 31 0;
+#X connect 41 0 30 0;
+#X connect 42 0 43 0;
+#X connect 43 0 30 0;
+#X coords 0 -1 1 1 633 53 2 116 378;
