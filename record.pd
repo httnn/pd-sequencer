@@ -51,7 +51,7 @@
 #X obj 143 406 int;
 #X obj 116 363 t b;
 #X obj 143 449 pack i f;
-#X obj 48 407 autoscale;
+#X obj 73 406 autoscale;
 #X obj 263 209 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X connect 1 0 2 0;
